@@ -145,7 +145,7 @@ async fn sd_sender_init(from: std::path::PathBuf, to: String) -> Result<(), Box<
     println!("Ready to sync directory. Listening on: {}", addr);
     accept_connection(listener.accept().await?.0).await?;
     std::fs::remove_file(zip_file_path)?;
-    println!("Successfully synced directory {:?}", from);
+    println!("Successfully sent directory {:?}", from);
     Ok(())
 }
 
